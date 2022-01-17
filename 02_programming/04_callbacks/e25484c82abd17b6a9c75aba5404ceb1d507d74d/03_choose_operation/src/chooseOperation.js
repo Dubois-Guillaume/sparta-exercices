@@ -22,8 +22,9 @@ function division(num1, num2) {
   return Division;
 }
 
-function chooseOperation(num1, num2, operator) {
+function chooseOperation(num1, num2, 'operator') {
   // Code here
+  if (Number.isInteger(num1, num2) && )
 }
 
 // Leave the line below for tests to work

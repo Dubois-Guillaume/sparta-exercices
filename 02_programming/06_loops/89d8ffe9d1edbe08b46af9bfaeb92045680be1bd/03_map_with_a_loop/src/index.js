@@ -1,18 +1,13 @@
-// const myVar = [1, 2, 3, 4];
-
-function mapLoop(numbers, double) {
+function mapLoop(array, callback) {
   // Code the function here.
-  const newNumbers = [];
+  const newArray = [];
 
-  for (const each of numbers) {
-    newNumbers.push(double(each));
+  for (let i = 0; i < array.length; i++) {
+    newArray.push(callback(array[i]));
   }
 
-  // console.log(newNumbers);
-
-  return newNumbers;
+  return newArray;
 }
 
-// mapLoop(myVar, (x) => x * 2);
 // Do not remove the following lines, it is for tests
 module.exports = mapLoop;

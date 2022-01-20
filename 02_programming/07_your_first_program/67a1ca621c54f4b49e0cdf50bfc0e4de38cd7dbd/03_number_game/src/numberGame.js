@@ -10,8 +10,8 @@ function numberGame(reader, min = 1, max = 100) {
     reader.question("Enter a number: ", (guess) => {
       console.log(guess.typeOf);
       function checkingFilter(guess) {
-        console.log(Number.isNaN(guess));
-        if (Number.isNaN(guess) === false) {
+        console.log(Number.isInteger(guess));
+        if (Number.isInteger(guess) === false) {
           console.log("This was not a number");
           numberQuestion();
         } else if (guess < min || guess > max) {

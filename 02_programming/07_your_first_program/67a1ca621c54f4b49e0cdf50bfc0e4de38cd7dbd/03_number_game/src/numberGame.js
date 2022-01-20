@@ -7,8 +7,8 @@ function numberGame(reader, min = 1, max = 100) {
   console.log(winNumber); //a commenter pour le test
 
   const numberQuestion = () =>
-    reader.question("Enter a number: ", (guess) => {
-      console.log(guess.typeOf);
+    reader.question("Enter a number: ", (response) => {
+      const guess = parseInt(response);
       function checkingFilter(guess) {
         console.log(Number.isInteger(guess));
         if (Number.isInteger(guess) === false) {

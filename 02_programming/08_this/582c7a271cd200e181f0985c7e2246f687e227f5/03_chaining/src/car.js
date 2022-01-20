@@ -15,13 +15,17 @@ const car = {
   },
   drive: function (drivingTime) {
     this.driving = drivingTime / 60;
+    this.calculateDistance();
     return car;
   },
   showDistance: function () {
-    let kM = this.speed * this.driving;
-    this.distance = kM;
+    console.log(this.distance);
     console.log(`${this.distance} Km`);
     return car;
+  },
+  calculateDistance: function () {
+    let kM = this.speed * this.driving;
+    this.distance += kM;
   },
 };
 

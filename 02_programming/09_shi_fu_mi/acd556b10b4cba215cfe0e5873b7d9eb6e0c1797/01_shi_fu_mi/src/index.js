@@ -7,11 +7,22 @@ const reader = readline.createInterface({
 
 console.log("Welcome traveller, come with me and play Rock, Paper, Scissors");
 
+shifumiGameSelector();
+
 const shifumiChoice = ["rock", "paper", "scissors"];
 
 function shifumiGameSelector(selector) {
+  if (selector === "dumbAI") {
+    shifumiGamePlayerVSAI();
+  } else if (selector === "pvp") {
+    shifumiGameTwoPlayers();
+  }
+
   reader.question(
-    "For a Player VS AI game write: 'dumbAI'\nFor a Player VS Player game write: 'PVP'\nChoose what type of game you want to play: ",
+    "For a Player VS AI game write: dumbAI\nFor a Player VS Player game write: pvp\nChoose what type of game you want to play: ",
+    (userChoice) => {
+      shifumiGameSelector(userChoice);
+    },
   );
 }
 
@@ -28,6 +39,12 @@ function shifumiGamePlayerVSAI(dumbAI) {
       player = "paper";
     } else if (playerChoice === shifumiChoice[2]) {
       player = "scissors";
+    } else if (
+      playerChoice !== shifumiChoice[0] &&
+      playerChoice !== shifumiChoice[1] &&
+      playerChoice !== shifumiChoice[2]
+    ) {
+      console.log("Please choose between: rock, paper ans scissors");
     }
     if (player === "rock") {
       console.log([
@@ -112,11 +129,11 @@ function shifumiGamePlayerVSAI(dumbAI) {
     } else if (player === "scissors" && aI === "paper") {
       win = "player";
     } else if (player === "rock" && aI === "rock") {
-      win = "Equality";
+      win = "Draw";
     } else if (player === "paper" && aI === "paper") {
-      win = "Equality";
+      win = "Draw";
     } else if (player === "scissors" && aI === "scissors") {
-      win = "Equality";
+      win = "Draw";
     } else if (aI === "rock" && player === "scissors") {
       win = "AI";
     } else if (aI === "paper" && player === "rock") {
@@ -132,8 +149,8 @@ function shifumiGamePlayerVSAI(dumbAI) {
       console.log("\nPlayer win!\n");
     } else if (win === "AI") {
       console.log("\nAI win!\n");
-    } else if (win === "Equality") {
-      console.log("\nEquality\n");
+    } else if (win === "Draw") {
+      console.log("\nDraw\n");
     }
     return;
   }
@@ -248,11 +265,11 @@ function shifumiGameTwoPlayers(twoPlayers) {
     } else if (player === "scissors" && playerTwo === "paper") {
       win = "player";
     } else if (player === "rock" && playerTwo === "rock") {
-      win = "Equality";
+      win = "Draw";
     } else if (player === "paper" && playerTwo === "paper") {
-      win = "Equality";
+      win = "Draw";
     } else if (player === "scissors" && playerTwo === "scissors") {
-      win = "Equality";
+      win = "Draw";
     } else if (playerTwo === "rock" && player === "scissors") {
       win = "playerTwo";
     } else if (playerTwo === "paper" && player === "rock") {
@@ -265,33 +282,34 @@ function shifumiGameTwoPlayers(twoPlayers) {
 
   function showResult(win) {
     if (win === "player") {
-      console.log("\nPlayer win!\n");
-    } else if (win === "PlayerTwo") {
-      console.log("\nPlayerTwo win!\n");
-    } else if (win === "Equality") {
-      console.log("\nEquality\n");
+      console.log("\nPlayer one win!\n");
+    } else if (win === "playerTwo") {
+      console.log("\nplayer two win!\n");
+    } else if (win === "Draw") {
+      console.log("\nDraw\n");
     }
     return;
   }
 
-  reader.question(
-    "Player One choose between rock, paper and scissors: ",
-    (playerChoice) => {
-      console.log("\nPlayer:\n");
+  reader.question("Player One choose between rock, paper and scissors: ", (playerChoice) => {
+    console.log("\nPlayer:\n");
 
-      changeAndShowPlayerChoice(playerChoice);
-    },
-    "Player One choose between rock, paper and scissors: ",
-    (playerTwoChoice) => {
+    changeAndShowPlayerChoice(playerChoice);
+
+    // console.log(player);
+
+    reader.question("Player Two choose between rock, paper and scissors: ", (playerTwoChoice) => {
       console.log("\nPlayer Two:\n");
 
       changeAndShowPlayerTwoChoice(playerTwoChoice);
+
+      // console.log(playerTwo);
 
       result(player, playerTwo);
 
       showResult(win);
 
       reader.close();
-    },
-  );
+    });
+  });
 }

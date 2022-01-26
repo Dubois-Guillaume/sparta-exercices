@@ -22,9 +22,25 @@ function division(num1, num2) {
   return Division;
 }
 
-function chooseOperation(num1, num2, 'operator') {
+function chooseOperation(num1, num2, operator) {
   // Code here
-  if (Number.isInteger(num1, num2) && )
+  let numberOne = num1;
+  let numberTwo = num2;
+  let result;
+  if (numberOne === Number && numberTwo === Number) {
+    if (operator === "addition") {
+      result = addition(num1, num2);
+    } else if (operator === "substraction") {
+      result = substraction(num1, num2);
+    } else if (operator === "multiplication") {
+      result = multiplication(num1, num2);
+    } else if (operator === "division") {
+      result = division(num1, num2);
+    }
+    return result;
+  } else if (numberOne !== Number || numberTwo !== Number) {
+    throw new Error("Number 1 and 2 were not integer!");
+  }
 }
 
 // Leave the line below for tests to work

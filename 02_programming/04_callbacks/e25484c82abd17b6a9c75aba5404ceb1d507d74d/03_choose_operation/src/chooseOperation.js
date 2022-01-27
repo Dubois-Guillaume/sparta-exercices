@@ -1,46 +1,36 @@
 function addition(num1, num2) {
   // Code here
-  const Addition = num1 + num2;
-  return Addition;
+  const makeAddition = num1 + num2;
+  return makeAddition;
 }
 
 function substraction(num1, num2) {
   // Code here
-  const Substraction = num1 - num2;
-  return Substraction;
+  const makeSubstraction = num1 - num2;
+  return makeSubstraction;
 }
 
 function multiplication(num1, num2) {
   // Code here
-  const Multiplication = num1 * num2;
-  return Multiplication;
+  const makeMultiplication = num1 * num2;
+  return makeMultiplication;
 }
 
 function division(num1, num2) {
   // Code here
-  const Division = num1 / num2;
-  return Division;
+  const makeDivision = num1 / num2;
+  return makeDivision;
 }
 
 function chooseOperation(num1, num2, operator) {
   // Code here
-  let numberOne = num1;
-  let numberTwo = num2;
-  let result;
-  if (numberOne === Number && numberTwo === Number) {
-    if (operator === "addition") {
-      result = addition(num1, num2);
-    } else if (operator === "substraction") {
-      result = substraction(num1, num2);
-    } else if (operator === "multiplication") {
-      result = multiplication(num1, num2);
-    } else if (operator === "division") {
-      result = division(num1, num2);
-    }
-    return result;
-  } else if (numberOne !== Number || numberTwo !== Number) {
+  let result = "valeur initiale";
+  if (Number.isInteger(num1) && Number.isInteger(num2)) {
+    result = operator(num1, num2);
+  } else {
     throw new Error("Number 1 and 2 were not integer!");
   }
+  return result;
 }
 
 // Leave the line below for tests to work

@@ -4,7 +4,8 @@
   "main": "./src/index.ts",
   "license": "MIT",
   "scripts": {
-    "test": "eslint --ext .js,.ts . && sparta test --coverage"
+    "test": "eslint --ext .js,.ts . && sparta test --coverage",
+    "start": "ts-node ./src/index.ts"
   },
   "devDependencies": {
     "@types/jest": "26.0.10",

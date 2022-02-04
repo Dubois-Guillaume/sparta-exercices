@@ -1,11 +1,11 @@
 import { giveRecipe } from "./index";
 
-type CoffeeRecipe = {
+export type CoffeeRecipe = {
   name: string;
   ingredients: string[];
 };
 
-const coffeeRecipes: CoffeeRecipe[] = [
+export const coffeeRecipes: CoffeeRecipe[] = [
   {
     name: "espresso",
     ingredients: ["espresso"],

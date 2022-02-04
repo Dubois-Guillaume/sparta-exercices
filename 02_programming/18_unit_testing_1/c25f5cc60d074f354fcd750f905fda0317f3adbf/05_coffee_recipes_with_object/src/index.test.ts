@@ -1,11 +1,11 @@
 import { recipeMaker } from "./index";
 
-type CoffeeRecipe = {
+export type CoffeeRecipe = {
   name: string;
   ingredients: string[];
 };
 
-const expectedCoffeeRecipes: CoffeeRecipe[] = [
+export const expectedCoffeeRecipes: CoffeeRecipe[] = [
   {
     name: "espresso",
     ingredients: ["espresso"],

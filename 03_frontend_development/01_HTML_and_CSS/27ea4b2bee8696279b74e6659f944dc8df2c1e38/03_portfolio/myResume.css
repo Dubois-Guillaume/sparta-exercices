@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: peachpuff;
+}
+
+.divider {
+  width: 95%;
+  height: 20px;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  background-color: white;
+  border-radius: 25px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Oswald", sans-serif;
+}
+
+#header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 850px;
+}
+
+#presentation {
+  width: 50%;
+  text-align: center;
+}
+
+#presentation h1 {
+  font-size: 5em;
+}
+
+#presentation h2 {
+  font-size: 3em;
+}
+
+#profilepicture {
+  width: 50%;
+  text-align: center;
+}
+
+#profilepicture img {
+  border-radius: 25px;
+}
+
+#introduction {
+  text-align: center;
+  display: block;
+  height: 500px;
+  text-align: center;
+}
+
+#introduction h3 {
+  font-size: 4em;
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+
+#introduction p {
+  font-family: "Nunito", sans-serif;
+  font-size: 2em;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  line-height: 2em;
+}
+
+#experiences {
+  display: block;
+  height: 700px;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+#experiences p {
+  font-family: "Nunito", sans-serif;
+  margin-top: 32px;
+  font-size: 2em;
+  line-height: 2em;
+  text-align: center;
+}
+
+#experiences h3 {
+  margin-top: 32px;
+  margin-bottom: 16px;
+  font-size: 3em;
+  text-align: center;
+}
+
+.STI2DHide {
+  display: none;
+}
+
+.STI2D:hover + .STI2DHide {
+  display: block;
+}
+
+.MEIHide {
+  display: none;
+}
+
+.MEI:hover + .MEIHide {
+  display: block;
+}
+
+#experiences ul {
+  margin-top: 32px;
+  list-style-type: none;
+}
+
+#experiences ul li {
+  font-family: "Nunito", sans-serif;
+  font-size: 2em;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+#contact {
+  font-family: "Nunito", sans-serif;
+  font-size: 2em;
+  height: 400px;
+  text-align: center;
+  margin-top: 32px;
+}
+
+#contactList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Nunito", sans-serif;
+  margin-top: 64px;
+}
+
+#contactList li a:visited {
+  color: black;
+}
+
+#contactList li a:hover {
+  color: white;
+}
+
+#contactList li a:link {
+  text-decoration: none;
+}
+
+#contactList ul {
+  list-style-type: none;
+}
+
+#contactList ul li {
+  margin-top: 30px;
+}
+
+#contact .left {
+  width: 50%;
+  list-style-type: none;
+}
+
+#contact .right {
+  width: 50%;
+  list-style-type: none;
+}
+
+#skills {
+  font-family: "Nunito", sans-serif;
+  font-size: 2em;
+  height: 500px;
+  text-align: center;
+  margin-top: 32px;
+}
+
+#skillsList {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  font-family: "Nunito", sans-serif;
+  margin-top: 64px;
+}
+
+#skillsList ul {
+  list-style-type: none;
+}
+
+#skillsList ul li {
+  margin-top: 20px;
+  align-items: top;
+}
+
+#skills .softSkills {
+  width: 50%;
+  list-style-type: none;
+}
+
+#skills .hardSkills {
+  width: 50%;
+  list-style-type: none;
+}

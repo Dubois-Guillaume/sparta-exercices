@@ -13,8 +13,12 @@ const countries = [
   },
 ];
 
-export function insertManyCountries(db: Db, countries): number {
+export function insertManyCountries(db: Db, countries) {
   // code your function here
-  db.collection("worldAtlas").insertMany(countries);
-  return countries.length;
+  return db
+    .collection("worldAtlas")
+    .insertMany(countries)
+    .then((countries) => {
+      return countries.insertedCount;
+    });
 }

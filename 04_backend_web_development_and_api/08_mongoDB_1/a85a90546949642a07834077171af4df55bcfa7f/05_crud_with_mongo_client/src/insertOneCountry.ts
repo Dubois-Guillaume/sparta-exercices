@@ -5,7 +5,7 @@ export function insertOneCountry(db: Db, country): ObjectId {
   db.collection("worldAtlas")
     .insertOne(country)
     .then((country) => {
-      return country.insertedId.id;
+      return country;
     });
   return country._id;
 }

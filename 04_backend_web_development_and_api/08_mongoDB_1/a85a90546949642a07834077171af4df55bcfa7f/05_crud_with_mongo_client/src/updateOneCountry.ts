@@ -1,11 +1,14 @@
 import { Db } from "mongodb";
 
-export async function updateOneCountry(db: Db) {
+export function updateOneCountry(db: Db) {
   // code your function here
-  return await db
+  return db
     .collection("wordlAtlas")
     .updateOne({ capital: "Sydney" }, { $set: { capital: "Canberra" } })
     .then((country) => {
       return country.upsertedId;
+    })
+    .then((country) => {
+      return country;
     });
 }

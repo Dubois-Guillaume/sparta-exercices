@@ -1,11 +1,14 @@
 import { Db, ObjectId } from "mongodb";
 
-export function insertOneCountry(db: Db, country): ObjectId {
+export function insertOneCountry(db: Db, country) {
   // code your function here
-  db.collection("worldAtlas")
+  return db
+    .collection("worldAtlas")
     .insertOne(country)
     .then((country) => {
       return country;
+    })
+    .then((country) => {
+      return country.insertedId;
     });
-  return country._id;
 }

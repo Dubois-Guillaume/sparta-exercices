@@ -2,11 +2,11 @@ import React from "react";
 
 export const HideOrNotHide = () => {
   // Code here
-  const [paragraph, setParagraph] = React.useState();
+  const [paragraph, setParagraph] = React.useState(true);
 
   return (
     <div>
-      <button onClick={() => setParagraph("bonjour")}>{paragraph}</button>
+      <button onClick={() => setParagraph(!paragraph)}>{paragraph ? <p>Hello!</p> : <></>}</button>
     </div>
   );
 };

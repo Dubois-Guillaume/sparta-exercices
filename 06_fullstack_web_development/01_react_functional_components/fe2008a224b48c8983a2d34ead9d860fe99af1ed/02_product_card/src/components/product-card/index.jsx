@@ -1,14 +1,7 @@
 import React from "react";
 
-const ProductCard = ({ product }) => {
-  const [flashProduct, setProduct] = React.useState(true);
-  return (
-    <div>
-      <button onClick={() => setProduct(!flashProduct)}>
-        {flashProduct ? product[0].question : product[0].reponse}
-      </button>
-    </div>
-  );
+const ProductCard = () => {
+  return <div />;
 };
 
 // function componentParent() {

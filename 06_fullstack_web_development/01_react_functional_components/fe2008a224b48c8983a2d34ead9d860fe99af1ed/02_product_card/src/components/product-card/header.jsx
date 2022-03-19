@@ -1,7 +1,12 @@
 import React from "react";
 
-const CardHeader = () => {
-  return <div />;
+const CardHeader = ({ product }) => {
+  console.log("Nom du jeu", product.name);
+  return (
+    <div>
+      <p>{product.name}</p>
+    </div>
+  );
 };
 
 export default CardHeader;

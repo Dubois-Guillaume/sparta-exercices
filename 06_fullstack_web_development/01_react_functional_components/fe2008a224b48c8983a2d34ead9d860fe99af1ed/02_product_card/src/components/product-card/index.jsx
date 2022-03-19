@@ -1,7 +1,9 @@
 import React from "react";
+import CardHeader from "./header";
 
 const ProductCard = () => {
-  return <div />;
+  CardHeader();
+  return <div></div>;
 };
 
 // function componentParent() {
